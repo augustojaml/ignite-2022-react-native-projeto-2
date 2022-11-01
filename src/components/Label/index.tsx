@@ -20,7 +20,7 @@ export function Label({
 }: ParagraphProps) {
   return (
     <>
-      <Container background={background} onPress={onPress}>
+      <Container background={background} onPress={onPress} disabled={!onPress}>
         <Text
           size={size}
           family={family}

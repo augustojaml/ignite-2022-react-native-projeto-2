@@ -4,8 +4,6 @@ import { AppProviders } from '@global/providers/AppProviders';
 import { Main } from '@routes/Main';
 import React from 'react';
 
-import * as SplashScreen from 'expo-splash-screen';
-
 import {
   JosefinSans_400Regular,
   JosefinSans_500Medium,
@@ -13,6 +11,7 @@ import {
   useFonts,
 } from '@expo-google-fonts/josefin-sans';
 
+import { Loading } from '@components/Loading';
 import {
   Montserrat_300Light,
   Montserrat_400Regular,
@@ -20,6 +19,7 @@ import {
   Montserrat_700Bold,
   Montserrat_900Black,
 } from '@expo-google-fonts/montserrat';
+import { StatusBar } from 'react-native';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -33,19 +33,10 @@ export default function App() {
     Montserrat_900Black,
   });
 
-  SplashScreen.preventAutoHideAsync();
-
-  if (!fontsLoaded) {
-    return null;
-  }
-
-  SplashScreen.hideAsync();
-
   return (
     <>
-      <AppProviders>
-        <Main />
-      </AppProviders>
+      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
+      <AppProviders>{fontsLoaded ? <Main /> : <Loading />}</AppProviders>
     </>
   );
 }

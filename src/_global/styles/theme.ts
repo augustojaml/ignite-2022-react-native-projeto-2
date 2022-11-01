@@ -12,10 +12,10 @@ export const theme = {
     gray800: '#131016',
 
     blue500: '#007bff',
-    red500: '#dc3545',
-    green500: '#28a745',
+    red500: '#AA2834',
+    green500: '#00875F',
     yellow500: '#ffc107',
-  },
+  } as const,
 
   font: {
     primaryRegular: 'JosefinSans_400Regular',
@@ -25,7 +25,7 @@ export const theme = {
     secondaryMedium: 'Montserrat_500Medium',
     secondaryBold: 'Montserrat_700Bold',
     secondaryBlack: 'Montserrat_900Black',
-  },
+  } as const,
 
   size: {
     h1: '30px',
@@ -38,5 +38,5 @@ export const theme = {
     label: '14px',
     small: '12px',
     xsmall: '10px',
-  },
+  } as const,
 };

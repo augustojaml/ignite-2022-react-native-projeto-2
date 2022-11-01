@@ -1,4 +1,4 @@
-import { Text as TextField, TextInput, View } from 'react-native';
+import { Text as TextField, TextInput, TextInputProps, View } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import { theme as THEME } from './theme';
 
@@ -29,7 +29,9 @@ export const Text = styled(TextField)<TextProps>`
   `}
 `;
 
-export const DefaultInput = styled(TextInput)`
+interface InputProps extends TextInputProps {}
+
+export const DefaultInput = styled(TextInput)<InputProps>`
   ${({ theme }) => css`
     font-size: ${16}px;
     font-family: ${theme.font.primaryRegular};

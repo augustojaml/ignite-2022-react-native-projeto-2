@@ -36,6 +36,9 @@
     "react/jsx-no-useless-fragment": "off",
     "camelcase":"off",
     "@typescript-eslint/no-empty-interface":"off",
+    "import/no-extraneous-dependencies":"off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-unstable-nested-components": "off",
     "react/jsx-filename-extension": [
       1,
       {
