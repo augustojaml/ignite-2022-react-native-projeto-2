@@ -1,0 +1,36 @@
+{
+  "Basic React Native Interface": {
+    "prefix": "igfc",
+    "body": [
+      "import { Text } from '@global/styles/components';",
+      "import React from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "export function ${TM_DIRECTORY/.*[\\\\\\/](.*)$/$1/}() {",                       
+      "  return (",
+      "    <>",
+      "      <Container>",
+      "        <Text>${TM_DIRECTORY/.*[\\\\|\\/]+(.*)/$1/}</Text>",
+      "      </Container>",
+      "    </>",
+      "  );",
+      "}"
+    ],
+    "description": "Basic React Native Interface with Styled Component"
+  },
+  "Basic React Native Styled Component": {
+    "prefix": "igsc",
+    "body": [
+      "import styled, { css } from 'styled-components/native';",
+      "",
+      "export const Container = styled.View`",
+      "  ${({ theme }) => css`",
+      "    flex: 1;",
+      "    background-color: ${theme.colors.background900};",
+      "  `}",
+      "`;",      
+    ],
+    "description": "Basic Styled Component for React Native"
+  }
+}
