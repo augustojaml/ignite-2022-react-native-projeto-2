@@ -13,8 +13,8 @@
   <img alt="appredux" src="cover.png" height="30%"/> 
 </p>
 
-|          |          |          |
-|----------|----------|----------|
+|   Screenshot 1  |   Screenshot 2  |   Screenshot 3  |
+|-----------------|-----------------|-----------------|
 | <img alt="appredux" src="Screenshot_1667427658.png" height="50%"/> |  <img alt="appredux" src="Screenshot_1667427662.png" height="50%"/> | <img alt="appredux" src="Screenshot_1667427669.png" height="50%"/> |
 
 <h1  align="center">Como iniciar</h1>
