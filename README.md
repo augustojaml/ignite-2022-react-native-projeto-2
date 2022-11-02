@@ -9,9 +9,13 @@
   </a>
 </p>
 
+<h1  align="center">Capa</h1>
+
 <p align="center">  
   <img alt="appredux" src="cover.png" height="30%"/> 
 </p>
+
+<h1  align="center">Screenshots</h1>
 
 |   Screenshot 1  |   Screenshot 2  |   Screenshot 3  |
 |-----------------|-----------------|-----------------|
