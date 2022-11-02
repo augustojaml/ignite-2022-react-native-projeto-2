@@ -1,11 +1,15 @@
 import { createStackNavigator, StackNavigationOptions, TransitionPresets } from '@react-navigation/stack';
 
+export interface GroupsNewProps {
+  groupName: string;
+}
+
 declare global {
   namespace ReactNavigation {
     interface RootParamList {
       GroupsList: undefined;
       GroupsNew: undefined;
-      PlayerHome: undefined;
+      PlayerHome: GroupsNewProps;
     }
   }
 }
