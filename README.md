@@ -33,6 +33,12 @@
   yarn start
 ```
 
+<h1  align="center">Executar app</h1>
+
+```bash
+  expo start
+```
+
 <h1  align="center">Sobre o Iginte Team</h1>
 
 Tem o propsito de reunir pessoas para trabalhar ou jogar em turmas
