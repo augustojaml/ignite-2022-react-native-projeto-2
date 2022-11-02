@@ -39,6 +39,7 @@
     "import/no-extraneous-dependencies":"off",
     "react/jsx-props-no-spreading": "off",
     "react/no-unstable-nested-components": "off",
+    "@typescript-eslint/no-namespace":"off",
     "react/jsx-filename-extension": [
       1,
       {

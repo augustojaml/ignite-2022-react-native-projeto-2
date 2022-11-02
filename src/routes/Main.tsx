@@ -1,24 +1,7 @@
 import { GroupsList } from '@pages/Groups/GroupsList';
 import { GroupsNew } from '@pages/Groups/GroupsNew';
-import { createStackNavigator, StackNavigationOptions, TransitionPresets } from '@react-navigation/stack';
 import { PlayerHome } from '../pages/Players/PlayerHome';
-
-declare global {
-  namespace ReactNavigation {
-    interface RootParamList {
-      GroupsList: undefined;
-      GroupsNew: undefined;
-      PlayerHome: undefined;
-    }
-  }
-}
-
-const GLOBAL_OPTIONS: StackNavigationOptions = {
-  headerShown: false,
-  ...TransitionPresets.SlideFromRightIOS,
-};
-
-const MainStack = createStackNavigator();
+import { GLOBAL_OPTIONS, MainStack } from './props';
 
 export function Main() {
   return (
