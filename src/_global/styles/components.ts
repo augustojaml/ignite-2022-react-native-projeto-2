@@ -11,10 +11,11 @@ interface TextProps {
   marginLeft?: number;
   marginRight?: number;
   lineHeight?: number;
+  textAlign?: 'center' | 'justify' | 'left' | 'right';
 }
 
 export const Text = styled(TextField)<TextProps>`
-  ${({ theme, size, family, color, marginTop, marginBottom, marginLeft, marginRight, lineHeight }) => css`
+  ${({ theme, size, family, color, marginTop, marginBottom, marginLeft, marginRight, lineHeight, textAlign }) => css`
     font-size: ${theme.size[size ?? 'label']};
     font-family: ${theme.font[family ?? 'primaryRegular']};
     color: ${theme.colors[color ?? 'gray100']};
@@ -22,10 +23,11 @@ export const Text = styled(TextField)<TextProps>`
     margin-bottom: ${marginBottom ?? 0}px;
     margin-left: ${marginLeft ?? 0}px;
     margin-right: ${marginRight ?? 0}px;
-    ${lineHeight &&
-    css`
-      line-height: ${lineHeight}px;
-    `}
+    text-align: ${textAlign ? textAlign : 'left'}
+      ${lineHeight &&
+      css`
+        line-height: ${lineHeight}px;
+      `};
   `}
 `;
 

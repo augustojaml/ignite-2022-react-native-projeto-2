@@ -6,15 +6,15 @@ import Feather from '@expo/vector-icons/Feather';
 import { ButtonIcon, Container } from './styles';
 import { Props } from './props';
 
-export function Input({ onPress }: Props) {
+export function Input({ onPress, ...rest }: Props) {
   const theme = useTheme();
   return (
     <>
       <Container>
         <DefaultInput
-          placeholder="Seu nome"
           placeholderTextColor={theme.colors.gray700}
           style={{ flex: 1, height: '100%', paddingRight: onPress ? 0 : 24, color: theme.colors.gray100 }}
+          {...rest}
         />
         {onPress && (
           <ButtonIcon onPress={onPress}>

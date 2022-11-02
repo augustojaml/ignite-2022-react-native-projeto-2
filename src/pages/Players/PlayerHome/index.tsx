@@ -12,45 +12,64 @@ import { TabButton } from '@components/TabButton';
 import { useTheme } from 'styled-components/native';
 import { Label } from '@components/Label';
 import { FlatList } from 'react-native';
+import { EmptyList } from '@components/EmptyList';
+import { useNavigation } from '@react-navigation/native';
 import * as S from './styles';
 
-export function Home() {
+export function PlayerHome() {
   const theme = useTheme();
+  const navigation = useNavigation();
+
   const [team, setTeam] = useState<'teamA' | 'teamB'>('teamA');
+  const [players, setPlayers] = useState([0, 1]);
 
   function handleAddPersonOnTeam() {
-    // console.log('Testando');
+    console.log('Add Person');
+  }
+
+  function handleRemovePersonOnTeam() {
+    console.log('Remove Person');
+  }
+
+  function handleNavigationGoBack() {
+    navigation.goBack();
+  }
+
+  function removeTeam() {
+    console.log('Remove Team');
   }
 
   return (
     <>
       <S.Container>
-        <Header onPress={() => handleAddPersonOnTeam()} />
+        <Header onPress={() => handleNavigationGoBack()} />
         <S.Body>
           <Title title="Nome da Turma" subtitle="Adicione a galera e separe os times" />
           <Separator height={36} />
-          <Input onPress={() => handleAddPersonOnTeam()} />
+          <Input placeholder="Seu nome" onPress={() => handleAddPersonOnTeam()} />
           <Separator height={24} />
           <S.TabBarContainer>
             <S.TabBarInfo>
               <TabButton title="TIME A" active={team === 'teamA'} onPress={() => setTeam('teamA')} />
               <TabButton title="TIME B" active={team === 'teamB'} onPress={() => setTeam('teamB')} marginLeft={8} />
             </S.TabBarInfo>
-            <Label title="2" />
+            <Label title={String(players.length)} />
           </S.TabBarContainer>
 
           <Separator height={24} />
           <FlatList
-            data={[0, 1, 2, 3, 4, 5, 6, 7]}
+            data={players}
             keyExtractor={item => String(item)}
-            renderItem={() => <ListItem icon={User} iconSize={20} />}
+            renderItem={() => <ListItem icon={User} iconSize={20} onPressIcon={() => handleRemovePersonOnTeam()} />}
             ItemSeparatorComponent={() => <Separator height={10} />}
+            ListEmptyComponent={() => <EmptyList title={`Que tal cadastrar a \n primeira turma 😊`} />}
+            contentContainerStyle={players.length === 0 && { flex: 1 }}
           />
 
           <Separator height={16} />
         </S.Body>
         <Footer>
-          <Button title="Remover turma" background="red500" />
+          <Button title="Remover turma" background="red500" onPress={() => removeTeam()} />
         </Footer>
       </S.Container>
     </>

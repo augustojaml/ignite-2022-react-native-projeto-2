@@ -13,6 +13,7 @@ export function Label({
   marginLeft,
   marginRight,
   lineHeight,
+  textAlign,
   title = 'Paragraph',
   background,
   numberOfLines,
@@ -31,6 +32,7 @@ export function Label({
           marginRight={marginRight}
           lineHeight={lineHeight}
           numberOfLines={numberOfLines}
+          textAlign={textAlign}
         >
           {title}
         </Text>

@@ -9,7 +9,7 @@ export const Container = styled(View)<ContainerPorps>`
   ${({ theme, justifyContent }) => css`
     width: 100%;
     background-color: ${theme.colors.background700};
-    height: 110px;
+    height: 90px;
     flex-direction: row;
     align-items: flex-end;
     justify-content: ${justifyContent || 'space-between'};

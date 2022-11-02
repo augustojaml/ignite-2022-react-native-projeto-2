@@ -13,5 +13,6 @@ export interface ParagraphProps extends TouchableOpacityProps {
   title?: string;
   background?: string;
   numberOfLines?: number;
+  textAlign?: 'center' | 'justify' | 'left' | 'right';
   onPress?: (event: GestureResponderEvent) => void | undefined;
 }
